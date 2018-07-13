@@ -51,18 +51,19 @@ def euler3():
                 factor_list.append(low_factor)
                 high_factor = target / low_factor
             low_factor += 1
+        factor_list.append(target)
 
         return factor_list
 
     factors = list_of_factors(test_num)
     primes = []
     print(factors)
+
     for f in factors:
-        print(f)
         if len(list_of_factors(f)) == 1:
             primes.append(f)
-    print(max(primes))
 
+    print(max(primes))
 
 
 # euler1()
