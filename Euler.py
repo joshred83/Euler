@@ -55,10 +55,16 @@ def euler3():
         return factor_list
 
     factors = list_of_factors(test_num)
-    primes[]
+    primes = []
     print(factors)
     for f in factors:
-        (list_of_factors(f))
+        print(f)
+        if len(list_of_factors(f)) == 1:
+            primes.append(f)
+    print(max(primes))
 
 
+
+# euler1()
+# euler2()
 euler3()
