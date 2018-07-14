@@ -1,7 +1,6 @@
-# If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
-# The sum of these multiples is 23.
+import puzzleMath
+from puzzleMath import test_list
 
-# Find the sum of all the multiples of 3 or 5 below 1000.
 
 def euler1():
     # If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
@@ -42,25 +41,14 @@ def euler3():
     # What is the largest prime factor of the number 600851475143
     test_num = 600851475143
 
-    def list_of_factors(target):
-        factor_list = []
-        low_factor = 2
-        high_factor = int(target / 2)
-        while low_factor < high_factor:
-            if target % low_factor == 0:
-                factor_list.append(low_factor)
-                high_factor = target / low_factor
-            low_factor += 1
-        factor_list.append(target)
+    puzzleMath.list_of_factors(test_num)
 
-        return factor_list
-
-    factors = list_of_factors(test_num)
+    factors = puzzleMath.list_of_factors(test_num)
     primes = []
     print(factors)
 
     for f in factors:
-        if len(list_of_factors(f)) == 1:
+        if len(puzzleMath.list_of_factors(f)) == 1:
             primes.append(f)
 
     print(max(primes))
@@ -68,4 +56,18 @@ def euler3():
 
 # euler1()
 # euler2()
-euler3()
+# euler3()
+
+# A palindromic number reads the same both ways.
+# The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+#
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+
+
+
+
+
+
+
+
