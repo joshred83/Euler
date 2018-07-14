@@ -53,33 +53,94 @@ def euler3():
     print(max(primes))
 
 
+def euler4():
+    # A palindromic number reads the same both ways.
+    # The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+    #
+    # Find the largest palindrome made from the product of two 3-digit numbers.
+
+    x = 999
+    y = 999
+    found_palindrome = False
+    palindromes = []
+    while x > 99 and y > 99:
+        candidate = x * y
+        if puzzleMath.is_palindrome(candidate):
+            palindromes.append(candidate)
+            print('{} * {} = {}'.format(x, y, candidate))
+        y -= 1
+        if y < x:
+            y = 999
+            x -= 1
+    print('{} * {} = {}'.format(x, y, max(palindromes)))
+
+
+def euler5():
+    # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+    #
+    # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+    num = 2520
+    x = 1
+    while x <= 20:
+        test = num / x
+        if num % x != 0:
+            num += 20
+            print(num)
+            x = 1
+
+        x += 1
+        print(x)
+    print(num)
+
+
 # euler1()
 # euler2()
 # euler3()
+# euler4()
+# euler5()
+def euler6():
+    # The sum of the squares of the first ten natural numbers is,
+    #
+    # 1^2 + 2^2 + ... + 10^2 = 385
+    #
+    # The square of the sum of the first ten natural numbers is,
+    #
+    # (1 + 2 + ... + 10)^2 = 55^2 = 3025
+    #
+    # Hence the difference between the sum of the squares of the
+    # first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+    #
+    # Find the difference between the sum of the squares of
+    # the first one hundred natural numbers and the square of the sum.
+    sum_of_squares = 0
+    square_of_sums = 0
+    for i in range(1, 101):
+        sum_of_squares += i ** 2
+        square_of_sums += i
+    square_of_sums = square_of_sums ** 2
+    print(sum_of_squares)
+    print(square_of_sums)
+    print(square_of_sums - sum_of_squares)
 
-# A palindromic number reads the same both ways.
-# The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+# euler6()
+
+# Problem 50
+
+# The prime 41, can be written as the sum of six consecutive primes:
 #
-# Find the largest palindrome made from the product of two 3-digit numbers.
+# 41 = 2 + 3 + 5 + 7 + 11 + 13
+# This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+#
+# The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+#
+# Which prime, below one-million, can be written as the sum of the most consecutive primes?
 
-x = 999
-y = 999
+enum_primes = []
+j = 1
 
-found_palindrome = False
-
-while True:
-    largest_palindrome = x * y
-    print('{} * {} = {}'.format(x, y, largest_palindrome))
-    found_palindrome = puzzleMath.is_palindrome(largest_palindrome)
-    if found_palindrome:
-        break
-    y -= 1
-    if y < x:
-        y = 999
-        x -= 1
-
-print('{} * {} = {}'.format(x,y, largest_palindrome))
-
-
-
+for i in range(1, 1000000):
+    if puzzleMath.is_prime(i):
+        enum_primes.append([j, i])
+        j += 1
 
