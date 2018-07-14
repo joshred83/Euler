@@ -19,14 +19,14 @@ def fibo(limit):
         yield y
 
 
-def is_palindrome(test_palindrome):
-    test_palindrome = str(test_palindrome)
+def is_palindrome(palindrome):
+    palindrome = str(palindrome)
     x = 0
-    y = len(test_palindrome) - 1
+    y = len(palindrome) - 1
 
-    for x in range(int(len(test_palindrome) / 2)):
-        print('num/str: {} || x: {}, y: {}'.format(test_palindrome, test_palindrome[x], test_palindrome[y]))
-        if test_palindrome[x] == test_palindrome[y]:
+    for x in range(int(len(palindrome) / 2)):
+        print('num/str: {} || x: {}, y: {}'.format(palindrome, palindrome[x], palindrome[y]))
+        if palindrome[x] == palindrome[y]:
             result = True
         else:
             result = False
