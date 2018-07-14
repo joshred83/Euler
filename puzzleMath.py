@@ -20,19 +20,19 @@ def fibo(limit):
 
 
 def is_palindrome(palindrome):
-    palindrome = str(palindrome)
+    palindrome = str(palindrome).lower()
     x = 0
     y = len(palindrome) - 1
 
     for x in range(int(len(palindrome) / 2)):
-        print('num/str: {} || x: {}, y: {}'.format(palindrome, palindrome[x], palindrome[y]))
+        #print('num/str: {} || x: {}, y: {}'.format(palindrome, palindrome[x], palindrome[y]))
         if palindrome[x] == palindrome[y]:
             result = True
         else:
             result = False
             break
-        x += x
-        y -= y
+        x += 1
+        y -= 1
     return result
 
 
@@ -41,6 +41,6 @@ def is_palindrome_test(tests):
         print(i, ' ', is_palindrome(i))
 
 
-test_list = [123455, 909, 999, 9999, 1122111, 'hannah', 'dog']
-
-is_palindrome_test(test_list)
+# test_list = [123455, 909, 999, 9999, 1122111, 'hannah', 'dog', 'gog', 'Able was I ere I saw Elba']
+#
+# is_palindrome_test(test_list)

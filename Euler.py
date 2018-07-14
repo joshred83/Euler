@@ -1,5 +1,4 @@
 import puzzleMath
-from puzzleMath import test_list
 
 
 def euler1():
@@ -63,10 +62,23 @@ def euler3():
 #
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
+x = 999
+y = 999
 
+found_palindrome = False
 
+while True:
+    largest_palindrome = x * y
+    print('{} * {} = {}'.format(x, y, largest_palindrome))
+    found_palindrome = puzzleMath.is_palindrome(largest_palindrome)
+    if found_palindrome:
+        break
+    y -= 1
+    if y < x:
+        y = 999
+        x -= 1
 
-
+print('{} * {} = {}'.format(x,y, largest_palindrome))
 
 
 
